@@ -26,6 +26,7 @@ def extract_url(text):
     urls = re.findall(regex, text)
     return urls
 
-text = '15 裴秀智发布了一篇小红书笔记，快来看吧！ 😆 H3HX98ROIiKiNRt 😆 http://xhslink.com/a/O5ZY8gvX2dE0，复制本条信息，打开【小红书】App查看精彩内容！'
-url = extract_url(text[0])
-print(get_og_image_meta_contents(url))
+def get_xhs_img_urls(text):
+    urls = extract_url(text)
+    return get_og_image_meta_contents(urls[0])
+
