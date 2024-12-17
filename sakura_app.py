@@ -10,12 +10,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 sakura_router = APIRouter()
 
-with open("/Users/densu/Code/sbProject/data/config.json", "r") as file:
+with open("../data/config.json", "r") as file:
       GITHUB_CONFIG = json.load(file)
 
 # GitHub API 配置
-GITHUB_TOKEN = GITHUB_CONFIG.token  # 替换为你的 GitHub Token
-GITHUB_REPO = GITHUB_CONFIG.repo  # 替换为你的仓库名
+GITHUB_TOKEN = GITHUB_CONFIG["token"]  # 替换为你的 GitHub Token
+GITHUB_REPO = GITHUB_CONFIG["repo"]  # 替换为你的仓库名
 GITHUB_API_URL = "https://api.github.com/repos/{}/contents/".format(GITHUB_REPO)
 GITHUB_BRANCH = "main"  # 你要上传到的分支，默认通常是 'main'
 # urls.json 文件路径
