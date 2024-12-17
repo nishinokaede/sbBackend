@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 sakura_router = APIRouter()
 
-with open("../data/config.json", "r") as file:
+with open("/Users/densu/Code/sbProject/data/config.json", "r") as file:
       GITHUB_CONFIG = json.load(file)
 
 # GitHub API 配置
