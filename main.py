@@ -2,6 +2,7 @@ from starlette.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from app import router
 from tools.tools_app import tools_router
+from sakura_app import sakura_router
 
 app = FastAPI()
 app.add_middleware(
@@ -14,6 +15,7 @@ app.add_middleware(
 
 app.include_router(router)
 app.include_router(tools_router)
+app.include_router(sakura_router)
 
 if __name__ == "__main__":
     import uvicorn
